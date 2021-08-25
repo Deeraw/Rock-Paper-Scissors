@@ -1,12 +1,45 @@
-<html <!DOCTYPE html>
-
+<!<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
-    <head>
-      <title>Rock Paper Scissors</title>
-    </head>
-    <body>
-        
-        <script type="text/javascript" src="javascript.js"></script>
+  <head>
 
-    </body>
+    <title>Rock, Paper, Scissors</title>
+
+  </head>
+  <body>
+    <script>
+
+      /* Begin with a function called computerPlay that will randomly return either 
+      'Rock', 'Paper', or 'Scissors'. */
+
+      randomNumber = Math.floor(Math.random() * 100);
+
+      function computerPlay(randomNumber) { 
+        if (randomNumber <= 33.33) {
+          let handShape = 'Rock';
+          alert(handShape);
+        } else if (randomNumber <= 66.66 && randomNumber >= 33.33) {
+          let handShape = 'Paper';
+          alert(handShape);
+        } else {
+          let handShape = 'Scissors';
+          alert(handShape);
+        }
+        
+
+      }
+
+      computerPlay(randomNumber);
+
+/* 
+Write a function that plays a single round of Rock Paper Scissors. 
+- The function should take two parameters: the playerSelection and computerSelection, 
+and then return a string that declares the winner of the round like so: 
+"You lose! Paper beats rock".
+
+    </script>
+  </body>
 </html>
