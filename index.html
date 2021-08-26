@@ -19,26 +19,117 @@
 
       function computerPlay(randomNumber) { 
         if (randomNumber <= 33.33) {
-          let handShape = 'Rock';
-          alert(handShape);
+            let computerHandShape = 'rock';
+            alert('computer chose: rock');
+            return computerHandShape;
         } else if (randomNumber <= 66.66 && randomNumber >= 33.33) {
           let handShape = 'Paper';
           alert(handShape);
+            let computerHandShape = 'paper';
+            alert('computer chose: paper');
+            return computerHandShape;
+
         } else {
-          let handShape = 'Scissors';
-          alert(handShape);
+            let computerHandShape = 'scissors';
+            alert('computer chose: scissors');
+            return computerHandShape;
         }
         
-
       }
 
-      computerPlay(randomNumber);
+let computerSelection= computerPlay(randomNumber);
+computerSelection;
 
 /* 
 Write a function that plays a single round of Rock Paper Scissors. 
-- The function should take two parameters: the playerSelection and computerSelection, 
+- The function should take two parameters: the playerSelection andcomputerSelection, 
 and then return a string that declares the winner of the round like so: 
-"You lose! Paper beats rock".
+"You lose! Paper beats rock". 
+- Also, make it case-insensitive. */
+
+let playerChoice = window.prompt('Rock, paper, or scissors?'); // prompt for user input
+
+      function playerPlay(playerChoice) {
+        
+        if (playerChoice.toLowerCase() == 'rock') {             
+          // if the user picks rock...
+          let playerHandShape = 'rock';
+          alert('you chose: rock');
+          return playerHandShape;
+
+        } else if (playerChoice.toLowerCase() == 'paper') {     
+          // if the user picks paper...
+          let playerHandShape = 'paper';
+          alert('you chose: paper');
+          return playerHandShape;
+
+        } else if (playerChoice.toLowerCase() == 'scissors') {  
+          // if the user picks scissors ...
+          let playerHandShape = 'scissors';
+          alert('you chose: scissors');
+          return playerHandShape;
+
+        } else { 
+          // if the user doesn't pick an above option ...
+          alert('Please input a valid option.');
+        }
+
+      }
+
+playerPlay(playerChoice);
+
+
+// Play a round v1 
+
+/* function playRound(playerSelection,computerSelection) {
+    if (playerSelection == 'rock' && computerSelection == 'rock') {
+      alert('It\'s a draw!')
+
+    } else if (playerSelection == 'rock' && computerSelection == 'paper') {
+      alert('Computer wins!');
+    } else if (playerSelection == 'rock' && computerSelection == 'scissors') {
+      alert('Player wins!');
+    } else {
+      alert('We...don\'t know what happened.');
+
+    }
+}
+ */
+// Play a round v2 
+
+function playRound(playerSelection,computerSelection) {
+    if (playerSelection == 'rock') {
+      if (computerSelection == 'rock') {
+        alert('It\'s a draw!')
+      } else if (computerSelection = 'paper') {
+        alert('Computer wins!')
+      } else if (computerSelection = 'scissors') {
+        alert('You win!')
+      }
+    }
+
+    else if (playerSelection == 'paper') {
+      if (computerSelection == 'rock') {
+        alert('Player wins!')
+      } else if (computerSelection == 'paper') {
+        alert('it\'s a draw!');
+      } else if (computerSelection == 'scissors') {
+        alert('Computer wins!')
+      }
+    }
+
+    else if (playerSelection == 'scissors') {
+      if (computerSelection == 'rock') {
+        alert('computer wins!')
+      } else if (computerSelection == 'paper') {
+        alert('You win!')
+      } else if (computerSelection == 'scissors') {
+        alert('It\'s a draw!')
+      }
+    }
+    }
+
+playRound(playerChoice, computerSelection);
 
     </script>
   </body>
