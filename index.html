@@ -22,9 +22,8 @@
             let computerHandShape = 'rock';
             alert('computer chose: rock');
             return computerHandShape;
+
         } else if (randomNumber <= 66.66 && randomNumber >= 33.33) {
-          let handShape = 'Paper';
-          alert(handShape);
             let computerHandShape = 'paper';
             alert('computer chose: paper');
             return computerHandShape;
@@ -79,31 +78,14 @@ let playerChoice = window.prompt('Rock, paper, or scissors?'); // prompt for use
 playerPlay(playerChoice);
 
 
-// Play a round v1 
-
-/* function playRound(playerSelection,computerSelection) {
-    if (playerSelection == 'rock' && computerSelection == 'rock') {
-      alert('It\'s a draw!')
-
-    } else if (playerSelection == 'rock' && computerSelection == 'paper') {
-      alert('Computer wins!');
-    } else if (playerSelection == 'rock' && computerSelection == 'scissors') {
-      alert('Player wins!');
-    } else {
-      alert('We...don\'t know what happened.');
-
-    }
-}
- */
-// Play a round v2 
 
 function playRound(playerSelection,computerSelection) {
     if (playerSelection == 'rock') {
       if (computerSelection == 'rock') {
         alert('It\'s a draw!')
-      } else if (computerSelection = 'paper') {
+      } else if (computerSelection == 'paper') {
         alert('Computer wins!')
-      } else if (computerSelection = 'scissors') {
+      } else if (computerSelection == 'scissors') {
         alert('You win!')
       }
     }
@@ -127,6 +109,11 @@ function playRound(playerSelection,computerSelection) {
         alert('It\'s a draw!')
       }
     }
+
+    else {
+      alert('something went wrong!');
+    }
+
     }
 
 playRound(playerChoice, computerSelection);
