@@ -126,8 +126,11 @@ let computerScore = 0;
 
 
 function game() {
-  for (i=0; i < 5; i++) {
-  
+
+  for (i=0; i < 5; i++, console.log(`player score: ${playerScore}` + " and " + `computer score: ${computerScore}`) ) {
+    
+
+
     randomNumber = Math.floor(Math.random() * 100);
 
     
@@ -266,7 +269,13 @@ playRound(playerSelection, computerSelection);
 
   }
 
-
+if (playerScore > computerScore) {
+  console.log('Player wins!');
+} else if (playerScore == computerScore ) {
+  console.log('it\'s a draw!');
+} else if (playerScore < computerScore) {
+  console.log('Computer wins!');
+}
 
 }
 
