@@ -14,10 +14,11 @@
 
       /* Begin with a function called computerPlay that will randomly return either 
       'Rock', 'Paper', or 'Scissors'. */
-
-      randomNumber = Math.floor(Math.random() * 100);
-
+/*       randomNumber = Math.floor(Math.random() * 100);
+      
       function computerPlay(randomNumber) { 
+
+
         if (randomNumber <= 33.33) {
             let computerHandShape = 'rock';
             alert('computer chose: rock');
@@ -46,7 +47,7 @@ and then return a string that declares the winner of the round like so:
 "You lose! Paper beats rock". 
 - Also, make it case-insensitive. */
 
-let playerChoice = window.prompt('Rock, paper, or scissors?'); // prompt for user input
+/* let playerChoice = window.prompt('Rock, paper, or scissors?'); // prompt for user input
 
       function playerPlay(playerChoice) {
         
@@ -114,16 +115,163 @@ function playRound(playerSelection,computerSelection) {
       alert('something went wrong!');
     }
 
-    }
+    } */
 
-playRound(playerChoice, computerSelection);
-
+/* playRound(playerChoice, computerSelection);
+ */
 
 // play a 5 round game, keep score along the way, and report a winner at the end
+let playerScore = 0;
+let computerScore = 0;
+
 
 function game() {
-  for (i=0; )
+  for (i=0; i < 5; i++) {
+  
+    randomNumber = Math.floor(Math.random() * 100);
+
+    
+    
+      
+      function computerPlay(randomNumber) { 
+
+
+        if (randomNumber <= 33.33) {
+            let computerHandShape = 'rock';
+            alert('computer chose: rock');
+            return computerHandShape;
+
+        } else if (randomNumber <= 66.66 && randomNumber >= 33.33) {
+            let computerHandShape = 'paper';
+            alert('computer chose: paper');
+            return computerHandShape;
+
+        } else {
+            let computerHandShape = 'scissors';
+            alert('computer chose: scissors');
+            return computerHandShape;
+        }
+        
+      }
+
+  let computerSelection = computerPlay(randomNumber);
+
+  computerSelection;
+
+
+  let playerChoice = window.prompt('Rock, paper, or scissors?'); // prompt for user input
+
+      function playerPlay(playerChoice) {
+        
+        if (playerChoice.toLowerCase() == 'rock') {             
+          // if the user picks rock...
+          let playerHandShape = 'rock';
+          alert('you chose: rock');
+          return playerHandShape;
+
+        } else if (playerChoice.toLowerCase() == 'paper') {     
+          // if the user picks paper...
+          let playerHandShape = 'paper';
+          alert('you chose: paper');
+          return playerHandShape;
+
+        } else if (playerChoice.toLowerCase() == 'scissors') {  
+          // if the user picks scissors ...
+          let playerHandShape = 'scissors';
+          alert('you chose: scissors');
+          return playerHandShape;
+
+        } else { 
+          // if the user doesn't pick an above option ...
+          alert('Please input a valid option.');
+        }
+
+      }
+
+  let playerSelection = playerPlay(playerChoice);
+
+    function playRound(playerSelection, computerSelection) {
+
+        if (playerSelection == 'rock') {
+          if (computerSelection == 'rock') {
+            alert('It\'s a draw!')
+            let drawString = console.log('draw');
+            return drawString; 
+
+          } else if (computerSelection == 'paper') {
+            alert('Computer wins!')
+            let printComputerScore = console.log(++computerScore);
+            return printComputerScore;
+
+          } else if (computerSelection == 'scissors') {
+            alert('You win!')
+            let printPlayerScore = console.log(++playerScore);
+            return printPlayerScore;
+
+          }
+        }
+
+    else if (playerSelection == 'paper') {
+
+      if (computerSelection == 'rock') {
+        alert('Player wins!')
+        let printPlayerScore = console.log(++playerScore);
+        return printPlayerScore;
+
+      } else if (computerSelection == 'paper') {
+        alert('it\'s a draw!');
+        let drawString = console.log('draw');
+        return drawString;
+
+      } else if (computerSelection == 'scissors') {
+        alert('Computer wins!')
+        let printComputerScore = console.log(++computerScore)
+        return printComputerScore;
+      }
+
+    }
+
+    else if (playerSelection == 'scissors') {
+
+      if (computerSelection == 'rock') {
+
+        alert('computer wins!')
+        let printComputerScore = console.log(++computerScore);
+        return printComputerScore;
+
+      } else if (computerSelection == 'paper') {
+
+        alert('You win!')
+        let printPlayerScore = console.log(++playerScore);
+        return printPlayerScore;
+
+      } else if (computerSelection == 'scissors') {
+        alert('It\'s a draw!')
+        let drawString = console.log('draw');
+        return drawString;
+      }
+
+    }
+
+    else {
+      alert('something went wrong!');
+    }
+
+    }
+
+
+playRound(playerSelection, computerSelection);
+
+
+
+  }
+
+
+
 }
+
+game();
+
 
 
     </script>
